@@ -1,0 +1,25 @@
+/* Œx•ñ‚ğ”­‚·‚é‘®•t‚«o—ÍŠÖ” */
+
+#include <stdio.h>
+#include <stdarg.h>
+
+/*--- Œx•ñ‚ğ”­‚·‚é‘®•t‚«o—ÍŠÖ” ---*/
+int aprintf(const char *format, ...)
+{
+	int 	count;
+	va_list	ap;
+
+	putchar('\a');
+	va_start(ap, format);
+	count = vprintf(format, ap);	/* ‰Â•ÏŒÂˆø”‚Ìˆ—‚ğvprintf‚Éˆê”C */
+	va_end(ap);
+	return (count);
+}
+
+int main(void)
+{
+	aprintf("Hello!\n");
+	aprintf("%d %ld %.2f\n", 2, 3L, 3.14);
+
+	return (0);
+}
